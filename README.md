@@ -1,61 +1,74 @@
 # Template para documentar endpoints.
 
-[MÉTODO HTTP] [RUTA]
+## [Funcionalidad]
+
+`[MÉTODO HTTP] [RUTA]`
 
 ### Descripción:
 
-[Breve descripción del propósito del endpoint]
+- [Breve descripción del propósito del endpoint]
 
-- Headers:
+---
 
-```http
-    [Lista de headers requeridos]
+> **Headers:**
+
+```
+ Lista de headers requeridos
 ```
 
-- Body:
+> **Body:**
 
 ```json
-    [Ejemplo del cuerpo de la solicitud]
+{
+ "Ejemplo": "del cuerpo de la solicitud"
+}
 ```
 
-- Parámetros:
+> **Parámetros:**
 
-Campo Tipo Requerido Descripción
-[campo] [tipo] [Sí/No] [descripción]
+| CAMPO 	| TIPO | REQUERIDO | DESCRIPCIÓN 			|
+|-----------|------|-----------|-------------
+| [campo] 	|[tipo]|  [Sí/No]  | [descripción]
 
-- Respuesta exitosa ([Código HTTP]):
+> **Respuesta exitosa ([Código HTTP]):**
 
 ```json
-    [Ejemplo de respuesta exitosa]
+{
+ "Ejemplo": "de respuesta exitosa"
+}
 ```
 
-- Respuesta de error ([Código HTTP]):
+> **Respuesta de error ([Código HTTP]):**
 
 ```json
-    [Ejemplo de respuesta de error]
+{
+ "Ejemplo": "de respuesta de error"
+}
 ```
 
-## Ejemplo
+# Ejemplo
 
-### Registrar usuario
+## Registrar usuario
 
 `POST /api/auth/register`
 
 ### Descripción:
 
-Registra un nuevo usuario en el sistema.
+- Registra un nuevo usuario en el sistema.
 
-- Headers:
+---
+
+> **Headers:**
 
 ```http
-   Content-Type: application/json
+Content-Type: application/json
 ```
 
-- Body:
+> **Body:**
 
 ```json
 {
-  "username": "nuevo_usuario",
+ "username": "nuevo_usuario",
   "email": "usuario@example.com",
   "password": "contraseñaSegura123",
   "nombre": "Juan",
@@ -63,16 +76,17 @@ Registra un nuevo usuario en el sistema.
 }
 ```
 
-- Parámetros:
+> **Parámetros:**
 
-Campo Tipo Requerido Descripción
-[username] [stirng] [Sí] [Nombre de usuario unico]
-[email] [stirng] [Sí] [Email válido]
-[password] [stirng] [Sí] [Mínimo 8 caracteres]
-[nombre] [stirng] [No] [Nombre real del usuario]
-[apellido] [stirng] [No] [Apellido del usuario]
+| Campo | Tipo | Requerido | Descripción
+|-------|------|-----------|------------
+| [username] | [stirng] | [Sí] | [Nombre de usuario unico]
+| [email] | [stirng] | [Sí] | [Email válido]
+| [password] | [stirng] | [Sí] | [Mínimo 8 caracteres]
+| [nombre] | [stirng] | [No] | [Nombre real del usuario]
+| [apellido] | [stirng] | [No] | [Apellido del usuario]
 
-- Respuesta exitosa (201 Created):
+> **Respuesta exitosa (201 Created):**
 
 ```json
 {
@@ -83,7 +97,7 @@ Campo Tipo Requerido Descripción
 }
 ```
 
-- Respuesta de error (400 Bad Request):
+> **Respuesta de error (400 Bad Request):**
 
 ```json
 {
